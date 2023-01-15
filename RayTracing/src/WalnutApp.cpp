@@ -7,15 +7,22 @@
 
 #include "Renderer.h"
 
+#include <glm/gtc/type_ptr.hpp>
+
 using namespace Walnut;
 
 class ExampleLayer : public Walnut::Layer
 {
 public:
+
+	glm::vec3 sphereColor = glm::vec3(1, 0, 1);
+
 	virtual void OnUIRender() override
 	{
 		ImGui::Begin("Settings");
 		ImGui::Text("Last Render: %.3fms", m_LastRenderTime);
+		ImGui::ColorEdit3("Sphere Color", glm::value_ptr(sphereColor));
+
 		if (ImGui::Button("Render"))
 		{
 			Render();
@@ -45,7 +52,7 @@ public:
 		Timer timer;
 
 		m_Renderer.OnResize(m_ViewportWidth, m_ViewportHeight);
-		m_Renderer.Render();
+		m_Renderer.Render(sphereColor);
 
 		m_LastRenderTime = timer.ElapsedMillis();
 	}
