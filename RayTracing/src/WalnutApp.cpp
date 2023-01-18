@@ -16,6 +16,8 @@ class ExampleLayer : public Walnut::Layer
 public:
 
 	glm::vec3 sphereColor = glm::vec3(1, 0, 1);
+	float lightXDir;
+	float lightYDir;
 
 	virtual void OnUIRender() override
 	{
