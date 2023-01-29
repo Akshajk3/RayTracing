@@ -6,6 +6,7 @@
 
 
 #include "Renderer.h"
+#include "Camera.h"
 
 #include <glm/gtc/type_ptr.hpp>
 
@@ -14,10 +15,16 @@ using namespace Walnut;
 class ExampleLayer : public Walnut::Layer
 {
 public:
-
+	ExampleLayer()
+		: m_Camera(45.0f, 0.1f, 100.0f) {}
 	glm::vec3 sphereColor = glm::vec3(1, 0, 1);
 	float lightXDir;
 	float lightYDir;
+
+	virtual void OnUpdate(float ts) override
+	{
+		m_Camera.OnUpdate(ts);
+	}
 
 	virtual void OnUIRender() override
 	{
@@ -54,13 +61,15 @@ public:
 		Timer timer;
 
 		m_Renderer.OnResize(m_ViewportWidth, m_ViewportHeight);
-		m_Renderer.Render(sphereColor);
+		m_Camera.OnResize(m_ViewportWidth, m_ViewportHeight);
+		m_Renderer.Render(m_Camera, sphereColor);
 
 		m_LastRenderTime = timer.ElapsedMillis();
 	}
 
 private:
 	Renderer m_Renderer;
+	Camera m_Camera;
 	uint32_t m_ViewportWidth = 0, m_ViewportHeight = 0;
 
 	float m_LastRenderTime = 0.0f;
