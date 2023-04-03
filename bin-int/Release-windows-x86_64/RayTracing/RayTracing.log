@@ -1,6 +1,2 @@
-﻿  WalnutApp.cpp
-C:\Users\Kanumuri\Documents\GitHub\Raytracer\RayTracing\RayTracing\src\WalnutApp.cpp(61,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Kanumuri\Documents\GitHub\Raytracer\RayTracing\RayTracing\src\WalnutApp.cpp(66,63): warning C4244: 'argument': conversion from 'float' to 'ImGuiColorEditFlags', possible loss of data
-C:\Users\Kanumuri\Documents\GitHub\Raytracer\RayTracing\RayTracing\src\WalnutApp.cpp(77,51): warning C4244: '=': conversion from 'float' to 'uint32_t', possible loss of data
-C:\Users\Kanumuri\Documents\GitHub\Raytracer\RayTracing\RayTracing\src\WalnutApp.cpp(78,52): warning C4244: '=': conversion from 'float' to 'uint32_t', possible loss of data
-  RayTracing.vcxproj -> C:\Users\Kanumuri\Documents\GitHub\Raytracer\RayTracing\bin\Release-windows-x86_64\RayTracing\RayTracing.exe
+﻿  Renderer.cpp
+  RayTracing.vcxproj -> C:\Users\Aki\Documents\GitHub\RayTracing\bin\Release-windows-x86_64\RayTracing\RayTracing.exe
